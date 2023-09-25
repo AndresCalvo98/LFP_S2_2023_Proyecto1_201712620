@@ -57,7 +57,7 @@ class ExpresionAritmetica(Expresion):
         elif self.tipo == "raiz":
             resultado = math.pow(valor1, 1 / valor2)
         elif self.tipo == "division":
-            resultado = float(valor1)/valor2
+            resultado = valor1/valor2
         elif self.tipo == "mod":
             resultado = valor1 % valor2
 
@@ -65,7 +65,7 @@ class ExpresionAritmetica(Expresion):
         if arbol == None:
             print("arbol es None")
 
-        raiz = arbol.agregarNodo(f"{self.tipo}\\n{str(round(resultado))}")
+        raiz = arbol.agregarNodo(f"{self.tipo}\\n{str(round(resultado, 2))}")
         arbol.agregarArista(raiz, nodo1)
         if self.valor2 != None:
             arbol.agregarArista(raiz, nodo2)

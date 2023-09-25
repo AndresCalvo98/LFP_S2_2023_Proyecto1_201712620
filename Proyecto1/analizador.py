@@ -1,4 +1,5 @@
 from collections import namedtuple
+from tkinter import messagebox
 from Expresiones import *
 from Expresiones.aritmeticas import ExpresionAritmetica
 from Expresiones.trigonometricas import ExpresionTrigonometrica
@@ -85,7 +86,7 @@ def tokenize_input(input_str):
             token = Token(string.lower(), line, col)
             tokens.append(token)
         elif char in ["{", "}", "[", "]", ",", ":"]:
-            print({"char": char, "line": line, "col": col, "i": i})
+            #print({"char": char, "line": line, "col": col, "i": i})
             col += 1
             i += 1
             token = Token(char, line, col)
@@ -117,7 +118,7 @@ def get_instruccion():
     value2 = None
     while tokens:
         token = tokens.pop(0)
-        print("VALUE: ", token)
+        #print("VALUE: ", token)
         if token.value == "operacion":
             # eliminar el :
             tokens.pop(0)
@@ -138,7 +139,8 @@ def get_instruccion():
             tokens.pop(0)
             configuracion[token.value] = tokens.pop(0).value
         else:
-            print("\033[1;31;40m Error: token desconocido:", token, "\033[0m")
+            pass
+            #print("\033[1;31;40m Error: token desconocido:", token, "\033[0m")
 
         if operacion and value1 and value2:
             return ExpresionAritmetica(operacion, value1, value2, 0, 0)
@@ -177,10 +179,13 @@ def analizar(entrada):
         print("RESULTADO INSTRUCCION: ", i.interpretar())
 
     return arbol
-# for i in tokens:
-#     print(i)
 
-# print("INSTRUCCIONES: ", instrucciones)
+def Analizar_op(entrada):
+    tokenize_input(entrada)
+    instrucciones = create_instructions()
+    arreglo = []
+    for i in instrucciones:
+        arreglo.append(i.interpretar())
 
-# print("\n" * 3)
-# print(arbol.dot.source)
+    messagebox.showinfo("Resultados de las operaciones", arreglo)
+    

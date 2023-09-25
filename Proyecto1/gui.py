@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import *
 from tkinter.filedialog import askopenfilename, asksaveasfilename
-from analizador import analizar
+from analizador import analizar, Analizar_op
+
 
 class ScrollText(tk.Frame):
     def __init__(self, master, *args, **kwargs):
@@ -106,7 +107,7 @@ class Ventana(tk.Tk):
 
         self.filemenu.add_separator()
         self.filemenu.add_command(label="Exit", command=self.quit)
-        self.menu.add_command(label="Analizar" )
+        self.menu.add_command(label="Analizar", command=self.analisis_Operaciones )
         self.menu.add_command(label="Ver reporte", command=self.analizar_texto)
         self.menu.add_command(label="Ver errores")
 
@@ -141,6 +142,12 @@ class Ventana(tk.Tk):
         arbol = analizar(text)
         print(arbol.dot.source)
         arbol.dot.view()
+
+    def analisis_Operaciones(self):
+        text = self.scroll.get(1.0, tk.END) 
+        Analizar_op(text)
+
+        
 
 app = Ventana()
 app.mainloop()

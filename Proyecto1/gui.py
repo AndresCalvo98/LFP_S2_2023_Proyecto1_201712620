@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from tkinter.filedialog import askopenfilename, asksaveasfilename
-from analizador import analizar, Analizar_op
+from analizador import analizar, Analizar_op, Error
 
 
 class ScrollText(tk.Frame):
@@ -110,6 +110,8 @@ class Ventana(tk.Tk):
         self.menu.add_command(label="Analizar", command=self.analisis_Operaciones )
         self.menu.add_command(label="Ver reporte", command=self.analizar_texto)
         self.menu.add_command(label="Ver errores")
+        
+
 
     def open_file(self):
         filepath = askopenfilename(
@@ -147,7 +149,19 @@ class Ventana(tk.Tk):
         text = self.scroll.get(1.0, tk.END) 
         Analizar_op(text)
 
-        
+def muestra_errores(self):
+        texte = self.scroll.get(1.0, tk.END)
+        errores = Error(texte)
 
+        popup_windowe = tk.Toplevel(self)
+        popup_windowe.title("Errores")
+        
+        errores_text = tk.Text(popup_windowe, height=300, width=100, bg="white")
+        errores_text.pack()
+
+        for errors in errores:
+            errores_text.insert(tk.END, str(errors) + "\n")
+
+        
 app = Ventana()
 app.mainloop()

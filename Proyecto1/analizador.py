@@ -13,6 +13,7 @@ line = 1
 col = 1
 
 tokens = []
+errores=[]
 
 
 configuracion = {
@@ -31,7 +32,6 @@ def tokenize_string(input_str, i):
             return [token, i]
         token += char
         i += 1
-    print("Error: string no cerrado")
 
 
 # formar un numero
@@ -188,4 +188,173 @@ def Analizar_op(entrada):
         arreglo.append(i.interpretar())
 
     messagebox.showinfo("Resultados de las operaciones", arreglo)
-    
+
+def tokenize_input_reporte(input_str):
+    # referenciar las variables globales
+    global line, col, tokens
+    # iterar sobre cada caracter del input
+    i = 0
+    # mientras no se llegue al final del input
+    while i < len(input_str):
+        # obtener el caracter actual
+        char = input_str[i]
+        if char.isspace():
+            # si es un salto de linea
+            if char == "\n":
+                line += 1
+                col = 1
+            # si es un tabulador
+            elif char == "\t":
+                col += 4
+            # si es un espacio
+            else:
+                col += 1
+            # incrementar el indice
+            i += 1
+        # si es un string formar el token
+        elif char == '"':
+            string, pos = tokenize_string(input_str[i + 1 :], i)
+            col += len(string) + 1
+            i = pos + 2
+            token = Token(string, line, col)
+            tokens.append(token)
+        elif char in ["{", "}", "[", "]", ",", ":"]:
+            col += 1
+            i += 1
+            token = Token(char, line, col)
+            tokens.append(token)
+        elif char.isdigit():
+            number, pos = tokenize_number(input_str[i:], i)
+            col += pos - i
+            i = pos
+            token = Token(number, line, col)
+            tokens.append(token)
+        else:
+            error = {
+                "mensaje": f"Carácter desconocido: {char}",
+                "línea": line + 1,
+                "columna": col + 1,
+            }
+            i += 1
+            col += 1
+
+def tokenize_input_error(input_str):
+    # referenciar las variables globales
+    global line, col, tokens, errores
+    # iterar sobre cada caracter del input
+    i = 0
+    # mientras no se llegue al final del input
+    while i < len(input_str):
+        # obtener el caracter actual
+        char = input_str[i]
+        if char.isspace():
+            # si es un salto de linea
+            if char == "\n":
+                line += 1
+                col = 1
+            # si es un tabulador
+            elif char == "\t":
+                col += 4
+            # si es un espacio
+            else:
+                col += 1
+            # incrementar el indice
+            i += 1
+        # si es un string formar el token
+        elif char == '"':
+            string, pos = tokenize_string(input_str[i + 1 :], i)
+            col += len(string) + 1
+            i = pos + 2
+            token = Token(string, line, col)
+            tokens.append(token)
+        elif char in ["{", "}", "[", "]", ",", ":"]:
+            col += 1
+            i += 1
+            token = Token(char, line, col)
+            tokens.append(token)
+        elif char.isdigit():
+            number, pos = tokenize_number(input_str[i:], i)
+            col += pos - i
+            i = pos
+            token = Token(number, line, col)
+            tokens.append(token)
+        else:
+            # Crear un objeto de error y agregarlo a la lista de errores
+            error = {
+            "No": len(errores) + 1,
+                "Detalles": {
+                    "Carácter desconocido: ": char,
+                    "tipo": "Lexico",
+                    "línea": line + 1,
+                    "columna": col + 1,
+                }
+            }
+            errores.append(error)
+            i += 1
+            col += 1
+
+def Error(entrada):
+    global tokens
+    global errores
+    errores.clear()
+    tokenize_input_error(entrada)
+    return errores
+
+
+def tokenize_input_error(input_str):
+    # referenciar las variables globales
+    global line, col, tokens, errores
+    # iterar sobre cada caracter del input
+    i = 0
+    # mientras no se llegue al final del input
+    while i < len(input_str):
+        # obtener el caracter actual
+        char = input_str[i]
+        if char.isspace():
+            # si es un salto de linea
+            if char == "\n":
+                line += 1
+                col = 1
+            # si es un tabulador
+            elif char == "\t":
+                col += 4
+            # si es un espacio
+            else:
+                col += 1
+            # incrementar el indice
+            i += 1
+        # si es un string formar el token
+        elif char == '"':
+            string, pos = tokenize_string(input_str[i + 1 :], i)
+            col += len(string) + 1
+            i = pos + 2
+            token = Token(string, line, col)
+            tokens.append(token)
+        elif char in ["{", "}", "[", "]", ",", ":"]:
+            col += 1
+            i += 1
+            token = Token(char, line, col)
+            tokens.append(token)
+        elif char.isdigit():
+            number, pos = tokenize_number(input_str[i:], i)
+            col += pos - i
+            i = pos
+            token = Token(number, line, col)
+            tokens.append(token)
+        else:
+            # Crear un objeto de error y agregarlo a la lista de errores
+            error = {
+            "No": len(errores) + 1,
+                "Detalles": {
+                    "Carácter desconocido: ": char,
+                    "tipo": "Lexico",
+                    "línea": line + 1,
+                    "columna": col + 1,
+                }
+            }
+            errores.append(error)
+            i += 1
+            col += 1
+
+
+

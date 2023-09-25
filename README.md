@@ -12,3 +12,5 @@
 > - Luis Andres Calvo Arreaga         201712620
 
 ### Manual De Usuario
+El siguiente programa es un Interfaz grafica emulando un editor de texto tal como se muetra en la siguiente imagen.
+![Alt text](image-2.png)

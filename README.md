@@ -10,9 +10,14 @@
 
 > Nombre
 > - Luis Andres Calvo Arreaga         201712620
+# Manual Tecnico
 
-### Manual De Usuario
+La siguiente aplicacion fue creada en lenguaje Python haciendo uso de la librería de Tkinter y el Paradigma POO.
+Esta se divide en varios segmentos, y comenzaremos con visualizando el Analizador Lexico ya que este es un
+
+# Manual De Usuario
 El siguiente programa es un Interfaz grafica emulando un editor de texto tal como se muetra en la siguiente imagen.
+
 ![image](https://github.com/AndresCalvo98/LFP_S2_2023_Proyecto1_201712620/assets/66381259/1ad198b2-aa27-4138-ab9c-36ffd2a54b74)
 
 Este cuenta con las siguientes opciones de menu en la esquina superior izquierda.

@@ -1,0 +1,158 @@
+// Graph 20230924-182229
+digraph {
+	node [style=filled]
+	node [style=filled]
+	nodo0 [label=6.5]
+	nodo1 [label=3.5]
+	nodo2 [label="resta\n3"]
+	nodo2 -> nodo0
+	nodo2 -> nodo1
+	nodo3 [label=2.3]
+	nodo4 [label=5.32]
+	nodo5 [label="suma\n8"]
+	nodo5 -> nodo3
+	nodo5 -> nodo4
+	nodo6 [label=2.3]
+	nodo7 [label=90]
+	nodo8 [label="seno\n0.89"]
+	nodo8 -> nodo7
+	nodo9 [label="multiplicacion\n2"]
+	nodo9 -> nodo6
+	nodo9 -> nodo8
+	nodo10 [label=10]
+	nodo11 [label=3]
+	nodo12 [label="mod\n1"]
+	nodo12 -> nodo10
+	nodo12 -> nodo11
+	nodo13 [label=5.32]
+	nodo14 [label="division\n0"]
+	nodo14 -> nodo12
+	nodo14 -> nodo13
+	nodo15 [label=7.8]
+	nodo16 [label=1.2]
+	nodo17 [label="resta\n7"]
+	nodo17 -> nodo15
+	nodo17 -> nodo16
+	nodo18 [label=4.5]
+	nodo19 [label=6.7]
+	nodo20 [label="suma\n11"]
+	nodo20 -> nodo18
+	nodo20 -> nodo19
+	nodo21 [label=3.14]
+	nodo22 [label=45]
+	nodo23 [label="coseno\n0.53"]
+	nodo23 -> nodo22
+	nodo24 [label="multiplicacion\n2"]
+	nodo24 -> nodo21
+	nodo24 -> nodo23
+	nodo25 [label=8]
+	nodo26 [label="inverso\n0"]
+	nodo26 -> nodo25
+	nodo27 [label=2.71]
+	nodo28 [label="division\n0"]
+	nodo28 -> nodo26
+	nodo28 -> nodo27
+	nodo29 [label=9.6]
+	nodo30 [label=4.8]
+	nodo31 [label="resta\n5"]
+	nodo31 -> nodo29
+	nodo31 -> nodo30
+	nodo32 [label=1.11]
+	nodo33 [label=7.89]
+	nodo34 [label="suma\n9"]
+	nodo34 -> nodo32
+	nodo34 -> nodo33
+	nodo35 [label=6.66]
+	nodo36 [label=30]
+	nodo37 [label="tangente\n-6.41"]
+	nodo37 -> nodo36
+	nodo38 [label="multiplicacion\n-43"]
+	nodo38 -> nodo35
+	nodo38 -> nodo37
+	nodo39 [label=12]
+	nodo40 [label="inverso\n0"]
+	nodo40 -> nodo39
+	nodo41 [label=3.33]
+	nodo42 [label="division\n0"]
+	nodo42 -> nodo40
+	nodo42 -> nodo41
+	nodo43 [label=10.5]
+	nodo44 [label=5.5]
+	nodo45 [label="resta\n5"]
+	nodo45 -> nodo43
+	nodo45 -> nodo44
+	nodo46 [label=2.22]
+	nodo47 [label=8.88]
+	nodo48 [label="suma\n11"]
+	nodo48 -> nodo46
+	nodo48 -> nodo47
+	nodo49 [label=5.55]
+	nodo50 [label=60]
+	nodo51 [label="seno\n-0.3"]
+	nodo51 -> nodo50
+	nodo52 [label="multiplicacion\n-2"]
+	nodo52 -> nodo49
+	nodo52 -> nodo51
+	nodo53 [label=90]
+	nodo54 [label="coseno\n-0.45"]
+	nodo54 -> nodo53
+	nodo55 [label=4.44]
+	nodo56 [label="division\n0"]
+	nodo56 -> nodo54
+	nodo56 -> nodo55
+	nodo57 [label=8.7]
+	nodo58 [label=2.3]
+	nodo59 [label="resta\n6"]
+	nodo59 -> nodo57
+	nodo59 -> nodo58
+	nodo60 [label=3.33]
+	nodo61 [label=9.99]
+	nodo62 [label="suma\n13"]
+	nodo62 -> nodo60
+	nodo62 -> nodo61
+	nodo63 [label=7.77]
+	nodo64 [label=75]
+	nodo65 [label="seno\n-0.39"]
+	nodo65 -> nodo64
+	nodo66 [label="multiplicacion\n-3"]
+	nodo66 -> nodo63
+	nodo66 -> nodo65
+	nodo67 [label=25]
+	nodo68 [label=2]
+	nodo69 [label="raiz\n5"]
+	nodo69 -> nodo67
+	nodo69 -> nodo68
+	nodo70 [label=6.66]
+	nodo71 [label="division\n1"]
+	nodo71 -> nodo69
+	nodo71 -> nodo70
+	nodo72 [label=5.6]
+	nodo73 [label=0.9]
+	nodo74 [label="resta\n5"]
+	nodo74 -> nodo72
+	nodo74 -> nodo73
+	nodo75 [label=4.44]
+	nodo76 [label=7.77]
+	nodo77 [label="suma\n12"]
+	nodo77 -> nodo75
+	nodo77 -> nodo76
+	nodo78 [label=8.88]
+	nodo79 [label=10]
+	nodo80 [label=2]
+	nodo81 [label="potencia\n100"]
+	nodo81 -> nodo79
+	nodo81 -> nodo80
+	nodo82 [label="multiplicacion\n888"]
+	nodo82 -> nodo78
+	nodo82 -> nodo81
+	nodo83 [label=3.4]
+	nodo84 [label=2.1]
+	nodo85 [label="resta\n1"]
+	nodo85 -> nodo83
+	nodo85 -> nodo84
+	nodo86 [label=5.55]
+	nodo87 [label=6.66]
+	nodo88 [label="suma\n12"]
+	nodo88 -> nodo86
+	nodo88 -> nodo87
+}
